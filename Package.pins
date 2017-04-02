@@ -1,0 +1,36 @@
+{
+  "autoPin": true,
+  "pins": [
+    {
+      "package": "JSONConfig",
+      "reason": null,
+      "repositoryURL": "https://github.com/iamjono/JSONConfig.git",
+      "version": "0.1.3"
+    },
+    {
+      "package": "PerfectLib",
+      "reason": null,
+      "repositoryURL": "https://github.com/PerfectlySoft/PerfectLib.git",
+      "version": "2.0.9"
+    },
+    {
+      "package": "PerfectZip",
+      "reason": null,
+      "repositoryURL": "https://github.com/PerfectlySoft/Perfect-Zip.git",
+      "version": "2.0.2"
+    },
+    {
+      "package": "SwiftString",
+      "reason": null,
+      "repositoryURL": "https://github.com/iamjono/SwiftString.git",
+      "version": "1.1.0"
+    },
+    {
+      "package": "minizip",
+      "reason": null,
+      "repositoryURL": "https://github.com/iamjono/minizip.git",
+      "version": "0.1.1"
+    }
+  ],
+  "version": 1
+}
