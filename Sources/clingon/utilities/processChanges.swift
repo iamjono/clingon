@@ -10,13 +10,7 @@ import PerfectLib
 import SwiftString
 
 
-//func processChanges(_ data: [String: Any], _ directory: String) throws {
 func processChanges() throws {
-//	var d = Dir(directory)
-
-//	guard let projectName = data["projectName"] else {
-//		throw scaffoldError.noPackageName
-//	}
 
 	/* =======================================================
 	Change the Packages Dir

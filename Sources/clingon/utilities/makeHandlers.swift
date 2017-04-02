@@ -51,8 +51,5 @@ func makeHandler(handler: String, responseType: handlerType) throws {
 	} catch {
 		throw scaffoldError.fileWriteError
 	}
-
-	
-	
 	
 }

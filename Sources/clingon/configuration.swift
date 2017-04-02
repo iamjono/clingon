@@ -39,7 +39,6 @@ class Configuration {
 				}
 				let cc = c as! [String: Any]
 				config = ConfigurationConfig(cc)
-//				print(config.ORMDriver)
 
 				// =============================================
 				// Routes
@@ -88,7 +87,6 @@ class ConfigurationConfig {
 
 	init() {}
 	init(_ cc: [String: Any]) {
-//		print("Setting ConfigurationConfig: \(cc)")
 
 		if cc["includeHealthCheck"] as! String == "false" { includeHealthCheck = false }
 		if cc["includeSessionFilters"] as! String == "true" { includeSessionFilters = true }
@@ -118,8 +116,6 @@ class ConfigurationConfig {
 		default:
 			ORMDriver = .none
 		}
-
-		print("ORMDriver is \(ORMDriver)")
 
 		if let sdriver = cc["SessionDriver"] {
 			switch sdriver as! String {
@@ -161,8 +157,6 @@ class ConfigurationClasses {
 
 		let includeORMSup	= cc["includeORMSupport"] as? String ?? "false"
 		if includeORMSup == "true" { includeORMSupport = true }
-		print(includeORMSupport)
-
 
 		let cp = cc["properties"] as? [[String: Any]]
 		cp?.forEach{properties.append(ConfigurationClassProperties($0))}

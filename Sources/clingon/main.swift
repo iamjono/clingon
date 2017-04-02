@@ -17,6 +17,7 @@ import Darwin
 
 // File source JSON for parsing
 var sourceFile: String? = nil
+var generateXcodeProject: Bool = false
 
 // Destination directory
 var destinationDirectory: String? = nil
@@ -25,7 +26,7 @@ var args = CommandLine.arguments.makeIterator()
 var currArg = args.next()
 
 func usage() {
-	print("Usage: \(CommandLine.arguments.first!) [--root source_json] [--dest destination_dir]")
+	print("Usage: \(CommandLine.arguments.first!) [--config source_json] [--dest destination_dir] [--xcode xcode]")
 	exit(0)
 }
 
@@ -38,12 +39,23 @@ func argFirst() -> String {
 	return frst
 }
 
+func argOptBoolean() -> Bool {
+	currArg = args.next()
+	guard let _ = currArg else {
+		return false
+	}
+	return true
+}
+
 let validArgs = [
-	"--root": {
+	"--config": {
 		sourceFile = argFirst()
 	},
 	"--dest": {
 		destinationDirectory = argFirst()
+	},
+	"--xcode": {
+		generateXcodeProject = argOptBoolean()
 	},
 	"--help": {
 		usage()
@@ -81,3 +93,14 @@ do {
 	fatalError("Could not process configuration file")
 }
 
+if generateXcodeProject {
+	do {
+		// Make Xcode Project file
+		let d = Dir(destinationDirectory!)
+		try d.setAsWorkingDir()
+		try runProc("swift", args: ["package", "generate-xcodeproj"])
+		print("Generated Xcode project file")
+	} catch {
+		print(error)
+	}
+}
