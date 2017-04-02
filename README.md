@@ -1,5 +1,23 @@
 # Clingon
 
+<p align="center">
+    <a href="https://developer.apple.com/swift/" target="_blank">
+        <img src="https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat" alt="Swift 3.1">
+    </a>
+    <a href="https://developer.apple.com/swift/" target="_blank">
+        <img src="https://img.shields.io/badge/Platforms-macOS-lightgray.svg?style=flat" alt="Platforms macOS">
+    </a>
+    <a href="http://perfect.org/licensing.html" target="_blank">
+        <img src="https://img.shields.io/badge/License-Apache-lightgrey.svg?style=flat" alt="License Apache">
+    </a>
+    <a href="http://twitter.com/iamjono" target="_blank">
+        <img src="https://img.shields.io/badge/Twitter-@iamjono-blue.svg?style=flat" alt="PerfectlySoft Twitter">
+    </a>
+    <a href="http://www.perfect.ly" target="_blank">
+        <img src="http://www.perfect.ly/badge.svg" alt="Slack Status">
+    </a>
+</p>
+
 The Swift project scaffolding application.
 
 This project builds a command line application which is then used to generate full code scaffolds for an API or Web Application from a JSON file.
