@@ -9,11 +9,27 @@
 	},
 	"classes" : [
 			{
-				"name" : "",
-				"inherits" : "",
-				"properties" : [{"name":"id","type": "Int", "default": 0}],
+				"name" : "Test",
+				"inherits" : "SQLiteStORM",
+				"includeORMSupport" : "true",
+				"properties" : [
+								{"name":"id","type": "Int", "default": 0},
+								{"name":"prop","type": "String", "default": ""},
+								{"name":"val","type": "String", "default": ""}
+								],
 				"includeSetup": "true"
-			}
+			},
+			 {
+				 "name" : "Test2",
+				 "inherits" : "SQLiteStORM",
+				 "includeORMSupport" : "true",
+				 "properties" : [
+								 {"name":"id","type": "Int", "default": 0},
+								 {"name":"one","type": "String", "default": ""},
+								 {"name":"two","type": "String", "default": ""}
+								 ],
+				 "includeSetup": "true"
+			 }
 	],
 	"routes" : [
 				{"method": "get", "route": "/hello", "handler": "helloWorld", "type": "html"},

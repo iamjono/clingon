@@ -9,16 +9,16 @@
 import PerfectLib
 import SwiftString
 
-func changeSourceDir(_ directory: String, _ projectName: String) throws {
+func changeSourceDir() throws {
 	/* =======================================================
 	Update the name of the Sources Directory Content Dir.
 	======================================================= */
-	let sourceProjectDirectory = Dir("\(directory)/Sources/Perfect-App-Template")
+	let sourceProjectDirectory = Dir("\(fconfig.destinationDir)/Sources/Perfect-App-Template")
 	if !sourceProjectDirectory.exists {
 		throw scaffoldError.noSourcesSubdirectory
 	}
 	do {
-		try runProc("mv", args: ["\(directory)/Sources/Perfect-App-Template", "\(directory)/Sources/\(projectName)"])
+		try runProc("mv", args: ["\(fconfig.destinationDir)/Sources/Perfect-App-Template", "\(fconfig.destinationDir)/Sources/\(fconfig.projectName)"])
 	} catch {
 		throw scaffoldError.noSourcesSubdirectory
 	}

@@ -9,11 +9,11 @@
 import PerfectLib
 import SwiftString
 
-func changeName(_ directory: String, _ projectName: String) throws {
+func changeName() throws {
 	/* =======================================================
 	Change the Packages Dir
 	======================================================= */
-	var filePackage = File("\(directory)/Package.swift")
+	var filePackage = File("\(fconfig.destinationDir)/Package.swift")
 	do {
 		try filePackage.open(.readWrite, permissions: .rwUserGroup)
 		defer {
@@ -25,7 +25,13 @@ func changeName(_ directory: String, _ projectName: String) throws {
 
 	do {
 		var packageContents = try filePackage.readString()
-		packageContents = packageContents.replacingOccurrences(of: "Perfect-App-Template", with: projectName)
+		packageContents = packageContents.replacingOccurrences(of: "Perfect-App-Template", with: fconfig.projectName)
+
+		if !fconfig.config.ORMInclude.isEmpty {
+			packageContents = packageContents.replacingOccurrences(of: ",\n    ]\n)", with: ",\n        \(fconfig.config.ORMInclude)\n    ]\n)")
+
+		}
+
 
 		try filePackage.open(.truncate, permissions: .rwUserGroup)
 		try filePackage.write(string: packageContents)

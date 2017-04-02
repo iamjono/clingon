@@ -8,7 +8,7 @@
 
 
 /*
-rm -R /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1 ; swift build; .build/debug/codify --root /Users/jonathanguthrie/Documents/development/iamjono/codify/demos/example.json  --dest /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1
+rm -R /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1 ; swift build; .build/debug/clingon --root /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/example.json  --dest /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1
 */
 
 import PerfectLib
@@ -72,12 +72,12 @@ struct ProcError: Error {
 clone(destinationDirectory!)
 
 
+var fconfig = Configuration()
 // read config
-let conf = config(sourceFile!)
-//print(conf)
-
 do {
-	try processChanges(conf, destinationDirectory!)
+	fconfig = try Configuration(sourceFile!, destinationDirectory: destinationDirectory!)
+	try processChanges()
 } catch {
-	print(error)
+	fatalError("Could not process configuration file")
 }
+

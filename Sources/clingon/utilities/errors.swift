@@ -28,6 +28,12 @@ public enum scaffoldError: Error {
 	/// no Config
 	noConfig,
 
+	/// no Classes
+	noClasses,
+	invalidClasses,
+
+	/// file write
+	fileWriteError,
 
 	/// The method is unimplemented
 	unimplemented
