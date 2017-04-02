@@ -9,7 +9,12 @@ It allows you to specify all routes, handlers, classes and class properties - an
 The resulting codebase is ready to go with [Perfect](https://www.perfect.org) base HTTP Server libraries, plus HTTP logging, Mustache support, optional ORM and Session support. The code is organized as in the pattern of the [Perfect App Template](https://github.com/PerfectlySoft/PerfectAppTemplate).
 
 
+
 ## Usage
+
+This application requires Swift 3.1 on macOS. While it may work on Swift 3.0.2 or earlier, YMMV.
+
+Once cloned, build with `swift build` then to use:
 
 ``` bash
 .build/debug/clingon \n
