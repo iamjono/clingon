@@ -57,9 +57,9 @@ func makeClasses() throws {
 			for props in cc.properties {
 				switch props.propertyType {
 				case "String":
-					str.append("        \(props.name) = this.data[\"property\"] as? String ?? \"\(props.defaultValue)\"")
+					str.append("        \(props.name) = this.data[\"\(props.name)\"] as? String ?? \"\(props.defaultValue)\"")
 				default:
-					str.append("        \(props.name) = this.data[\"property\"] as? \(props.propertyType) ?? \(props.defaultValue)")
+					str.append("        \(props.name) = this.data[\"\(props.name)\"] as? \(props.propertyType) ?? \(props.defaultValue)")
 				}
 			}
 			str.append("    }")
