@@ -8,7 +8,7 @@
 
 
 /*
-rm -R /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1 ; swift build; .build/debug/clingon --root /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/example.json  --dest /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1
+rm -R /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1 ; swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/example.json  --dest /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1
 */
 
 import PerfectLib
