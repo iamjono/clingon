@@ -18,13 +18,15 @@
     </a>
 </p>
 
-The Swift project scaffolding application.
+Have you ever tried to paint a two-storey house with just a ladder? Or free-climb a cliff? Yeah, it's hard, and takes a long time and you've got a lot of better things to do. 
 
-This project builds a command line application which is then used to generate full code scaffolds for an API or Web Application from a JSON file.
+That's where "code scaffolding" comes in. With a little non-code preparation, a scaffolding application generates the lower-level code so you start from a higher place in your code stack.
 
 It allows you to specify all routes, handlers, classes and class properties - and then generates them.
 
 The resulting codebase is ready to go with [Perfect](https://www.perfect.org) base HTTP Server libraries, plus HTTP logging, Mustache support, optional ORM and Session support. The code is organized as in the pattern of the [Perfect App Template](https://github.com/PerfectlySoft/PerfectAppTemplate).
+
+This project builds a command line application which is then used to generate full code scaffolds for an API or Web Application from a JSON file.
 
 
 
