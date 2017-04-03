@@ -1,6 +1,6 @@
 # Clingon
 
-<p align="center">
+<p>
     <a href="https://developer.apple.com/swift/" target="_blank">
         <img src="https://img.shields.io/badge/Swift-3.1-orange.svg?style=flat" alt="Swift 3.1">
     </a>
