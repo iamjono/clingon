@@ -40,9 +40,11 @@ func makeClasses() throws {
 		}
 		str.append(el)
 		// Class
+		if !cc.apicomment.isEmpty { str.append("/// \(cc.apicomment)") }
 		str.append("class \(cc.name)\(classInheritsStr) {")
 
 		for props in cc.properties {
+			if !props.apicomment.isEmpty { str.append("    /// \(props.apicomment)") }
 			switch props.propertyType {
 			case "String":
 				str.append("    public var \(props.name) = \"\(props.defaultValue)\"")

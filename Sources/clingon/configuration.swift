@@ -146,11 +146,13 @@ class ConfigurationClasses {
 	var properties: [ConfigurationClassProperties] = [ConfigurationClassProperties]()
 	var includeORMSupport = false
 	var includeSetup = false
+	var apicomment = ""
 
 	init(_ cc: [String: Any]) {
 
 		name		= cc["name"] as? String ?? "invalidName"
 		inherits	= cc["inherits"] as? String ?? ""
+		apicomment	= cc["apicomment"] as? String ?? ""
 
 		let classSetupStr	= cc["includeSetup"] as? String ?? "false"
 		if classSetupStr == "true" { includeSetup = true }
@@ -169,11 +171,13 @@ class ConfigurationRoutes {
 	var route = "unimplimented"
 	var handler = "unimplimented"
 	var responseType: handlerType = .html
+	var apicomment = ""
 
 	init(_ rr: [String: String]) {
-		method = rr["method"] ?? "get"
-		route = rr["route"] ?? "/unimplimented"
-		handler = rr["handler"] ?? "unimplimented"
+		method			= rr["method"] ?? "get"
+		route			= rr["route"] ?? "/unimplimented"
+		handler			= rr["handler"] ?? "unimplimented"
+		apicomment		= rr["apicomment"] ?? ""
 
 		let thisHandlerType = rr["type"] ?? "html"
 		if thisHandlerType == "json" {
@@ -187,11 +191,13 @@ class ConfigurationClassProperties {
 	var name = ""
 	var propertyType = ""
 	var defaultValue: Any = ""
+	var apicomment = ""
 
 	init(_ props: [String: Any]) {
 		name				= props["name"] as? String ?? "invalidName"
 		propertyType		= props["type"] as? String ?? "String"
 		defaultValue		= props["default"] ?? ""
+		apicomment			= props["apicomment"] as? String ?? ""
 	}
 
 }

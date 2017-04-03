@@ -13,26 +13,28 @@
 				"inherits" : "SQLiteStORM",
 				"includeORMSupport" : "true",
 				"properties" : [
-								{"name":"id","type": "Int", "default": 0},
-								{"name":"prop","type": "String", "default": ""},
-								{"name":"val","type": "String", "default": ""}
+								{"name":"id","type": "Int", "default": 0, "apicomment": "A sample comment for API docs"},
+								{"name":"prop","type": "String", "default": "", "apicomment": "A sample comment for API docs"},
+								{"name":"val","type": "String", "default": "", "apicomment": "A sample comment for API docs"}
 								],
-				"includeSetup": "true"
+				"includeSetup": "true",
+				"apicomment": "A sample comment for API docs"
 			},
 			 {
 				 "name" : "Test2",
 				 "inherits" : "SQLiteStORM",
 				 "includeORMSupport" : "true",
 				 "properties" : [
-								 {"name":"id","type": "Int", "default": 0},
-								 {"name":"one","type": "String", "default": ""},
-								 {"name":"two","type": "String", "default": ""}
+								 {"name":"id","type": "Int", "default": 0, "apicomment": "A sample comment for API docs"},
+								 {"name":"one","type": "String", "default": "", "apicomment": "A sample comment for API docs"},
+								 {"name":"two","type": "String", "default": "", "apicomment": "A sample comment for API docs"}
 								 ],
-				 "includeSetup": "true"
+				 "includeSetup": "true",
+				"apicomment": "A sample comment for API docs"
 			 }
 	],
 	"routes" : [
-				{"method": "get", "route": "/hello", "handler": "helloWorld", "type": "html"},
-				{"method": "get", "route": "/monster", "handler": "monsterizer", "type": "json"}
+				{"method": "get", "route": "/hello", "handler": "helloWorld", "type": "html", "apicomment": "A sample comment for API docs"},
+				{"method": "get", "route": "/monster", "handler": "monsterizer", "type": "json", "apicomment": "A sample comment for API docs"}
 	]
 }

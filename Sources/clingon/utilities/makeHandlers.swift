@@ -11,7 +11,7 @@ import PerfectLib
 
 
 
-func makeHandler(handler: String, responseType: handlerType) throws {
+func makeHandler(handler: String, responseType: handlerType, apicomment: String = "") throws {
 
 	let nl = "//"
 	let el = ""
@@ -28,6 +28,7 @@ func makeHandler(handler: String, responseType: handlerType) throws {
 	str.append("import PerfectHTTP")
 	str.append(el)
 	str.append("extension Handlers {")
+	if !apicomment.isEmpty { str.append("    /// \(apicomment)") }
 	str.append("    static func \(handler)(data: [String:Any]) throws -> RequestHandler {")
 	str.append("        return {")
 	str.append("        request, response in")

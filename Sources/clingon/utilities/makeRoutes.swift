@@ -38,13 +38,14 @@ func makeRoutes() throws {
 	str.append("func mainRoutes() -> [[String: Any]] {")
 	str.append("    var routes: [[String: Any]] = [[String: Any]]()")
 	if fconfig.config.includeHealthCheck {
-		str.append("    // Special healthcheck")
+		str.append("    /// Special healthcheck route")
 		str.append("    routes.append([\"method\":\"get\", \"uri\":\"/healthcheck\", \"handler\":Handlers.healthcheck])")
 	}
 	for rr in fconfig.routes {
+		if !rr.apicomment.isEmpty { str.append("    /// \(rr.apicomment)") }
 		str.append("    routes.append([\"method\":\"\(rr.method)\", \"uri\":\"\(rr.route)\", \"handler\":Handlers.\(rr.handler)])")
 		do {
-			try makeHandler(handler: rr.handler, responseType: rr.responseType)
+			try makeHandler(handler: rr.handler, responseType: rr.responseType, apicomment: rr.apicomment)
 		} catch {
 			throw scaffoldError.cannotMakeHandler
 		}
