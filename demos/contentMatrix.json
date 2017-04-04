@@ -1,0 +1,60 @@
+{
+
+	"projectName": "perfectContentMatrix",
+	"config": {
+		"includeHealthCheck" : "true",
+		"includeSessionFilters" : "trus",
+		"ORMDriver": "PostgreSQL",
+		"HTTPPort": 8105
+	},
+	"classes" : [
+				 {
+				 "name" : "Section",
+				 "inherits" : "PostgresStORM",
+				 "includeORMSupport" : "true",
+				 "properties" : [
+								 {"name":"id","type": "Int", "default": 0, "apicomment": "Row ID"},
+								 {"name":"name","type": "[String:Any]", "default": "[String:Any]()", "apicomment": "Section name (multilingual)"},
+								 {"name":"displayOrder","type": "Int", "default": 1, "apicomment": "Display order"},
+								 {"name":"status","type": "Int", "default": 1, "apicomment": "Active/Inactive"}
+								 ],
+				 "includeSetup": "true",
+				 "apicomment": "TOC Sections"
+				 },
+				 {
+				 "name" : "contentMatrix",
+				 "inherits" : "PostgresStORM",
+				 "includeORMSupport" : "true",
+				 "properties" : [
+								 {"name":"id","type": "Int", "default": 0, "apicomment": "Row ID"},
+								 {"name":"topic","type": "[String:Any]", "default": "[String:Any]()", "apicomment": "Topic name (multilingual)"},
+								 {"name":"description","type": "[String:Any]", "default": "[String:Any]()", "apicomment": "Description (multilingual)"},
+								 {"name":"github","type": "[String]", "default": "[String]()", "apicomment": "Github repo(s) (Array)"},
+								 {"name":"article","type": "[String]", "default": "[String]()", "apicomment": "Github repo(s) (Array)"},
+								 {"name":"video","type": "[String]", "default": "[String]()", "apicomment": "Github repo(s) (Array)"},
+								 {"name":"example","type": "[String]", "default": "[String]()", "apicomment": "Example links (Array)"},
+								 {"name":"doc","type": "[String]", "default": "[String]()", "apicomment": "Documentation links (Array)"},
+								 {"name":"level","type": "String", "default": "", "apicomment": "Topic level"},
+								 {"name":"displayOrder","type": "Int", "default": 1, "apicomment": "Display order"},
+								 {"name":"status","type": "Int", "default": 1, "apicomment": "Active/Inactive"}
+								 ],
+				 "includeSetup": "true",
+				 "apicomment": "Content matrix for examples/tutorials/video page"
+				 }
+				 ],
+	"routes" : [
+				{"method": "get", "route": "/api/v1/onboarding", "handler": "onboarding", "type": "json", "apicomment": "Main route for delivering JSON content to HTML"},
+
+				{"method": "get", "route": "/admin/content/section", "handler": "adminSectionList", "type": "html", "apicomment": "List sections"},
+				{"method": "get", "route": "/admin/content/section/{id}", "handler": "adminSectionDetail", "type": "html", "apicomment": "Section detail"},
+				{"method": "post", "route": "/admin/content/section", "handler": "adminSectionAddUpdate", "type": "html", "apicomment": "Add section"},
+				{"method": "patch", "route": "/admin/content/section/{id}", "handler": "adminSectionAddUpdate", "type": "html", "apicomment": "Update section"},
+				{"method": "delete", "route": "/admin/content/section/{id}", "handler": "adminSectionDelete", "type": "html", "apicomment": "Delete section"},
+
+				{"method": "get", "route": "/admin/content/matrix", "handler": "adminMatrixList", "type": "html", "apicomment": "List Matrix"},
+				{"method": "get", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixDetail", "type": "html", "apicomment": "Matrix detail"},
+				{"method": "post", "route": "/admin/content/matrix", "handler": "adminMatrixAddUpdate", "type": "html", "apicomment": "Add Matrix"},
+				{"method": "patch", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixAddUpdate", "type": "html", "apicomment": "Update Matrix"},
+				{"method": "delete", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixDelete", "type": "html", "apicomment": "Delete Matrix"}
+				]
+}

@@ -60,6 +60,10 @@ func makeClasses() throws {
 				switch props.propertyType {
 				case "String":
 					str.append("        \(props.name) = this.data[\"\(props.name)\"] as? String ?? \"\(props.defaultValue)\"")
+				case "[String:Any]":
+					str.append("        if let dataObj = this.data[\"\(props.name)\"] { \(props.name) = (dataObj as? [String:Any])! }")
+				case "[String]":
+					str.append("        if let dataObj = this.data[\"\(props.name)\"] { \(props.name) = (dataObj as? String ?? \"\").components(separatedBy: \",\") }")
 				default:
 					str.append("        \(props.name) = this.data[\"\(props.name)\"] as? \(props.propertyType) ?? \(props.defaultValue)")
 				}

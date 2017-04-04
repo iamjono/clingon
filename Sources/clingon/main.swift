@@ -9,6 +9,11 @@
 
 /*
 rm -R /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1 ; swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/example.json  --dest /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1
+
+swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/contentMatrix.json  --dest /Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-ContentMatrix/API --xcode true
+
+
+
 */
 
 import PerfectLib
