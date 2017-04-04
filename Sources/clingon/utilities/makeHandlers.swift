@@ -25,7 +25,10 @@ func makeHandler(handler: String, responseType: handlerType, apicomment: String 
 	str.append(nl)
 	str.append("//  Modified by Clingon: https://github.com/iamjono/clingon")
 	str.append(nl)
+
 	str.append("import PerfectHTTP")
+	if responseType == .html { str.append("import PerfectMustache") }
+
 	str.append(el)
 	str.append("extension Handlers {")
 	if !apicomment.isEmpty { str.append("    /// \(apicomment)") }
@@ -37,11 +40,20 @@ func makeHandler(handler: String, responseType: handlerType, apicomment: String 
 	if responseType == .json {
 		str.append("        let _ = try? response.setBody(json: [\"error\": \"Handler \(handler) not implemented\"])")
 	} else {
-		str.append("        response.setBody(string: \"<html><title>Not Implemented</title><body>This handler (\(handler)) is yet to be implemented</body></html>\")")
+		do {
+			try makeTemplate(handler: handler)
+			str.append("            let context: [String : Any] = [")
+			str.append("                \"property\": \"value\"")
+			str.append("            ]")
+			str.append("            response.render(template: \"templates/\(handler)\", context: context)")
+		} catch {
+			str.append("            response.setBody(string: \"<html><title>Not Implemented</title><body>This handler (\(handler)) is yet to be implemented</body></html>\")")
+			print("unable to create handler template for \(handler)")
+		}
 	}
 
 	
-	str.append("        response.completed()")
+	str.append("            response.completed()")
 	str.append("        }")
 	str.append("    }")
 	str.append("}")
