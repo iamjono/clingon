@@ -37,9 +37,12 @@ func makeRoutes() throws {
 	str.append(el)
 	str.append("func mainRoutes() -> [[String: Any]] {")
 	str.append("    var routes: [[String: Any]] = [[String: Any]]()")
+	str.append("    routes.append([\"method\":\"get\", \"uri\":\"/**\", \"handler\":PerfectHTTPServer.HTTPHandler.staticFiles, \"documentRoot\":\"./webroot\",\"allowResponseFilters\":true])")
+	str.append(el)
 	if fconfig.config.includeHealthCheck {
 		str.append("    /// Special healthcheck route")
 		str.append("    routes.append([\"method\":\"get\", \"uri\":\"/healthcheck\", \"handler\":Handlers.healthcheck])")
+		str.append(el)
 	}
 	for rr in fconfig.routes {
 		if !rr.apicomment.isEmpty { str.append("    /// \(rr.apicomment)") }
@@ -49,6 +52,7 @@ func makeRoutes() throws {
 		} catch {
 			throw scaffoldError.cannotMakeHandler
 		}
+		str.append(el)
 	}
 	str.append("    return routes")
 	str.append("}")
