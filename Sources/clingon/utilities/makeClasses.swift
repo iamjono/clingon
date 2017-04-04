@@ -42,6 +42,8 @@ func makeClasses() throws {
 		// Class
 		if !cc.apicomment.isEmpty { str.append("/// \(cc.apicomment)") }
 		str.append("class \(cc.name)\(classInheritsStr) {")
+		str.append(el)
+		str.append("    // Properties")
 
 		for props in cc.properties {
 			if !props.apicomment.isEmpty { str.append("    /// \(props.apicomment)") }
@@ -51,10 +53,12 @@ func makeClasses() throws {
 			default:
 				str.append("    public var \(props.name) = \(props.defaultValue)")
 			}
+			str.append(el)
 		}
 		if cc.includeORMSupport {
 			str.append(el)
 
+			str.append("    // ORM helper method")
 			str.append("    override public func to(_ this: StORMRow) {")
 			for props in cc.properties {
 				switch props.propertyType {
@@ -71,6 +75,7 @@ func makeClasses() throws {
 			str.append("    }")
 			str.append(el)
 
+			str.append("    // ORM helper method")
 			str.append("    func rows() -> [\(cc.name)] {")
 			str.append("        var rows = [\(cc.name)]()")
 			str.append("        for i in 0..<self.results.rows.count {")
