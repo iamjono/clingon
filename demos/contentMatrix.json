@@ -3,13 +3,13 @@
 	"projectName": "perfectContentMatrix",
 	"config": {
 		"includeHealthCheck" : "true",
-		"includeSessionFilters" : "trus",
+		"includeSessionFilters" : "true",
 		"ORMDriver": "PostgreSQL",
 		"HTTPPort": 8105
 	},
 	"classes" : [
 				 {
-				 "name" : "Section",
+				 "name" : "contentSection",
 				 "inherits" : "PostgresStORM",
 				 "includeORMSupport" : "true",
 				 "properties" : [
@@ -49,12 +49,12 @@
 				{"method": "get", "route": "/admin/content/section/{id}", "handler": "adminSectionDetail", "type": "html", "apicomment": "Section detail"},
 				{"method": "post", "route": "/admin/content/section", "handler": "adminSectionAddUpdate", "type": "html", "apicomment": "Add section"},
 				{"method": "patch", "route": "/admin/content/section/{id}", "handler": "adminSectionAddUpdate", "type": "html", "apicomment": "Update section"},
-				{"method": "delete", "route": "/admin/content/section/{id}", "handler": "adminSectionDelete", "type": "html", "apicomment": "Delete section"},
+				{"method": "delete", "route": "/admin/content/section/{id}", "handler": "adminSectionDelete", "type": "json", "apicomment": "Delete section"},
 
 				{"method": "get", "route": "/admin/content/matrix", "handler": "adminMatrixList", "type": "html", "apicomment": "List Matrix"},
 				{"method": "get", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixDetail", "type": "html", "apicomment": "Matrix detail"},
 				{"method": "post", "route": "/admin/content/matrix", "handler": "adminMatrixAddUpdate", "type": "html", "apicomment": "Add Matrix"},
 				{"method": "patch", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixAddUpdate", "type": "html", "apicomment": "Update Matrix"},
-				{"method": "delete", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixDelete", "type": "html", "apicomment": "Delete Matrix"}
+				{"method": "delete", "route": "/admin/content/matrix/{id}", "handler": "adminMatrixDelete", "type": "json", "apicomment": "Delete Matrix"}
 				]
 }
