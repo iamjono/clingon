@@ -12,6 +12,7 @@ rm -R /Users/jonathanguthrie/Documents/development/tests/SCAFFOLDTESTS/1 ; swift
 
 swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/contentMatrix.json  --dest /Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-ContentMatrix/API --xcode true
 
+swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/APITesting.json  --dest /Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-Examples/API-Testing-Target --xcode true
 
 
 */
