@@ -1,0 +1,38 @@
+{
+
+	"projectName": "APITestingTarget",
+	"config": {
+		"includeHealthCheck" : "true",
+		"includeSessionFilters" : "false",
+		"ORMDriver": "none",
+		"HTTPPort": 8105
+	},
+	"classes" : [
+				 {
+				 "name" : "Test",
+				 "inherits" : "",
+				 "includeORMSupport" : "false",
+				 "properties" : [
+								 {"name":"id","type": "Int", "default": 0, "apicomment": "Row ID"},
+								 {"name":"name","type": "String", "default": "", "apicomment": "Name"}
+								 ],
+				 "includeSetup": "false",
+				 "apicomment": "For Testing"
+				 }
+				 ],
+	"routes" : [
+				{"method": "get", "route": "/api/v1/test", "handler": "testGet", "type": "json", "apicomment": "Testing GET"},
+				{"method": "get", "route": "/api/v1/test/{id}", "handler": "testGet", "type": "json", "apicomment": "Testing GET by ID"},
+				
+				{"method": "post", "route": "/api/v1/test", "handler": "testPost", "type": "json", "apicomment": "Testing POST"},
+				
+				{"method": "patch", "route": "/api/v1/test/{id}", "handler": "testPut", "type": "json", "apicomment": "Testing PATCH"},
+				{"method": "delete", "route": "/api/v1/test/{id}", "handler": "testPut", "type": "json", "apicomment": "Testing DELETE"},
+				
+				{"method": "get", "route": "/api/v1/test/bearer", "handler": "testBearerToken", "type": "json", "apicomment": "Testing GET enforcing Bearer Token"},
+				
+				
+				{"method": "get", "route": "/", "handler": "stdHTML", "type": "html", "apicomment": "Testing HTML"}
+
+				]
+}
