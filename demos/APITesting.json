@@ -27,7 +27,7 @@
 				{"method": "post", "route": "/api/v1/test", "handler": "testPost", "type": "json", "apicomment": "Testing POST"},
 				
 				{"method": "patch", "route": "/api/v1/test/{id}", "handler": "testPut", "type": "json", "apicomment": "Testing PATCH"},
-				{"method": "delete", "route": "/api/v1/test/{id}", "handler": "testPut", "type": "json", "apicomment": "Testing DELETE"},
+				{"method": "delete", "route": "/api/v1/test/{id}", "handler": "testDelete", "type": "json", "apicomment": "Testing DELETE"},
 				
 				{"method": "get", "route": "/api/v1/test/bearer", "handler": "testBearerToken", "type": "json", "apicomment": "Testing GET enforcing Bearer Token"},
 				
