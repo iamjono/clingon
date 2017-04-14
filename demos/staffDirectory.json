@@ -1,0 +1,34 @@
+{
+
+	"projectName": "staffDirectory",
+	"config": {
+		"includeHealthCheck" : "false",
+		"includeSessionFilters" : "false",
+		"ORMDriver": "PostgreSQL",
+		"HTTPPort": 8181
+	},
+	"classes" : [
+			{
+				"name" : "Person",
+				"inherits" : "PostgresStORM",
+				"includeORMSupport" : "true",
+				"properties" : [
+								{"name":"id","type": "Int", "default": 0, "apicomment": "A sample comment for API docs"},
+								{"name":"firstname","type": "String", "default": "", "apicomment": "A sample comment for API docs"},
+								{"name":"lastname","type": "String", "default": "", "apicomment": "A sample comment for API docs"},
+								{"name":"email","type": "String", "default": "", "apicomment": "A sample comment for API docs"},
+								{"name":"phone","type": "String", "default": "", "apicomment": "A sample comment for API docs"},
+								{"name":"address","type": "String", "default": "", "apicomment": "A sample comment for API docs"}
+								],
+				"includeSetup": "true",
+				"apicomment": "A sample comment for API docs"
+			}
+	],
+	"routes" : [
+				{"method": "get", "route": "/api/v1/person", "handler": "personGet", "type": "json", "apicomment": "A sample comment for API docs"},
+				{"method": "get", "route": "/api/v1/person/{id}", "handler": "personGet", "type": "json", "apicomment": "A sample comment for API docs"},
+				{"method": "post", "route": "/api/v1/person", "handler": "personCreate", "type": "json", "apicomment": "A sample comment for API docs"},
+				{"method": "patch", "route": "/api/v1/person/{id}", "handler": "personUpdate", "type": "json", "apicomment": "A sample comment for API docs"},
+				{"method": "delete", "route": "/api/v1/person/{id}", "handler": "personDelete", "type": "json", "apicomment": "A sample comment for API docs"}
+	]
+}

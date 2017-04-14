@@ -14,6 +14,9 @@ swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/deve
 
 swift build; .build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/APITesting.json  --dest /Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-Examples/API-Testing-Target --xcode true
 
+.build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/imageLibrary.json  --dest /Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-Examples/ImageLibrary --xcode true
+
+.build/debug/clingon --config /Users/jonathanguthrie/Documents/development/iamjono/clingon/demos/staffDirectory.json  --dest /Users/jonathanguthrie/Documents/Perfect-Collection/Perfect-Examples/staffDirectory --xcode true
 
 */
 

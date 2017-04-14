@@ -1,0 +1,30 @@
+{
+
+	"projectName": "ImageLibrary",
+	"config": {
+		"includeHealthCheck" : "true",
+		"includeSessionFilters" : "false",
+		"ORMDriver": "PostgreSQL",
+		"HTTPPort": 8106
+	},
+	"classes" : [
+				 {
+				 "name" : "Images",
+				 "inherits" : "PostgreStORM",
+				 "includeORMSupport" : "true",
+				 "properties" : [
+								 {"name":"id","type": "Int", "default": 0, "apicomment": "Row ID"},
+								 {"name":"name","type": "String", "default": "", "apicomment": "Name"},
+								 {"name":"path","type": "String", "default": "", "apicomment": "Path to image"}
+								 ],
+				 "includeSetup": "true",
+				 "apicomment": "Image library storage"
+				 }
+				 ],
+	"routes" : [
+				
+				{"method": "get", "route": "/", "handler": "stdHTML", "type": "html", "apicomment": "HTML display"},
+				{"method": "get", "route": "/api/v1/images", "handler": "imageAPIlist", "type": "json", "apicomment": "Image Listing as JSON"}
+
+				]
+}
