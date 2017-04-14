@@ -42,6 +42,7 @@ func makeInitialize() throws {
 	str.append(el)
 	str.append("    }")
 	str.append("}")
+	str.append("")
 
 
 	// Write file

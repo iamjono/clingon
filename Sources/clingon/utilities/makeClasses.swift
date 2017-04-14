@@ -89,6 +89,7 @@ func makeClasses() throws {
 		}
 
 		str.append("}")
+		str.append("")
 
 
 		// Write file

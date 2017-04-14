@@ -16,6 +16,7 @@ func makeTemplate(handler: String) throws {
 	str.append("        <p>\(handler)</p>")
 	str.append("    </body>")
 	str.append("</html>")
+	str.append("")
 
 	// Write file
 	do {

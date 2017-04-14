@@ -38,7 +38,7 @@ func makeHandler(handler: String, responseType: handlerType, apicomment: String 
 
 	// response type switch
 	if responseType == .json {
-		str.append("        let _ = try? response.setBody(json: [\"error\": \"Handler \(handler) not implemented\"])")
+		str.append("            let _ = try? response.setBody(json: [\"error\": \"Handler \(handler) not implemented\"])")
 	} else {
 		do {
 			try makeTemplate(handler: handler)
@@ -57,6 +57,7 @@ func makeHandler(handler: String, responseType: handlerType, apicomment: String 
 	str.append("        }")
 	str.append("    }")
 	str.append("}")
+	str.append("")
 
 	// Write file
 	do {

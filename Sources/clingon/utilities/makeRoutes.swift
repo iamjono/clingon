@@ -56,6 +56,7 @@ func makeRoutes() throws {
 	}
 	str.append("    return routes")
 	str.append("}")
+	str.append("")
 
 
 	// Write file
