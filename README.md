@@ -1,4 +1,4 @@
-# Clingon
+# Clingon [简体中文](README.zh_CN.md)
 
 <p>
     <a href="https://developer.apple.com/swift/" target="_blank">
@@ -22,7 +22,7 @@ Have you ever tried to paint a two-storey house with just a ladder? Or free-clim
 
 That's where "code scaffolding" comes in. With a little non-code preparation, a scaffolding application generates the lower-level code so you start from a higher place in your code stack.
 
-It allows you to specify all routes, handlers, classes and class properties - and then generates them.
+It allows you to specify all routes, handlers, classes and class properties and even comments for future API document - and then generates them.
 
 The resulting codebase is ready to go with [Perfect](https://www.perfect.org) base HTTP Server libraries, plus HTTP logging, Mustache support, optional ORM and Session support. The code is organized as in the pattern of the [Perfect App Template](https://github.com/PerfectlySoft/PerfectAppTemplate).
 
